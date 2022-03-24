@@ -1,0 +1,26 @@
+/*
+ ============================================================================
+ Name        : Clase_01.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+	/*C es un lenguaje fuertemente tipado, se debe definir el tipo de dato que
+	 * voy a guardar.
+	 * Si quiero declarar algo numerico se usa
+	 * */
+	int numeroEnteros=10;
+	float numerosDecimales=10.2;
+
+
+
+	return EXIT_SUCCESS;
+}

@@ -1,0 +1,33 @@
+/*
+ ============================================================================
+ Name        : Clase_01.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+	/*C es un lenguaje fuertemente tipado, se debe definir el tipo de dato que
+	 * voy a guardar.:*/
+	int numeroEnteros=10;
+	float numerosDecimales=10.2;
+
+	//JavaScript
+	/*cosole.log()
+	 * alert()
+	 * document.write()
+	 * document.getElementById()
+
+	 En C, para imprimer en consola=*/
+
+	printf("Asi se muestra un int %d",numeroEnteros);
+	printf("Asi se muestra un float %f", numerosDecimales);
+
+	return EXIT_SUCCESS;
+}

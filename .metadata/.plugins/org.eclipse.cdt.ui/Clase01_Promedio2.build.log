@@ -1,0 +1,19 @@
+13:20:15 **** Incremental Build of configuration Debug for project Clase01_Promedio2 ****
+make all 
+Building file: ../src/Clase01_Promedio2.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Clase01_Promedio2.d" -MT"src/Clase01_Promedio2.o" -o "src/Clase01_Promedio2.o" "../src/Clase01_Promedio2.c"
+../src/Clase01_Promedio2.c: In function ‘main’:
+../src/Clase01_Promedio2.c:32:3: warning: implicit declaration of function ‘__fpurge’ [-Wimplicit-function-declaration]
+   32 |   __fpurge(stdin);
+      |   ^~~~~~~~
+Finished building: ../src/Clase01_Promedio2.c
+ 
+Building target: Clase01_Promedio2
+Invoking: GCC C Linker
+gcc  -o "Clase01_Promedio2"  ./src/Clase01_Promedio2.o   
+Finished building target: Clase01_Promedio2
+ 
+
+13:20:16 Build Finished. 0 errors, 1 warnings. (took 719ms)
+
