@@ -31,13 +31,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int sumar(int numA, int numB);
+
+float sumar(float numA, float numB);
 /*CABECERA (se declara arriba del main cuando no esta en biblioteca)
 una validación cuando se define el dato, se define por el tipo más general.
 pero si vamos a usar la función para muchos procesos hay que definir bien el dato
 para usar de forma performante la memoria.
 */
-
+// TIPO DE DATO		NOMBRE		(TIPO DE ARGUMENTOS/PARAMETROS)
+//------------------------------------------------------------------------------
 int main(void)
 {
 	int num1 = 10;
@@ -48,17 +50,17 @@ int main(void)
 
 	printf("la suma es: %d", resultado);
 
-	return EXIT_SUCCESS;
+	return 0;
 }
 /*DESARROLLO (se declara abajo del main cuando no esta en biblioteca)
 La diferencia es que los nombres ahora no son declarativos.
  */
-
-int sumar(int numA, int numB)
-{	int rtn;//retorno pero se pone rtn para con confundir con return
+//--------------------------------------------------------------------------------
+float sumar(float numA, float numB)
+{
+	float rtn;//retorno pero se pone rtn para con confundir con return
 
 	rtn=numA+numB;
 
 	return rtn;
-
 }

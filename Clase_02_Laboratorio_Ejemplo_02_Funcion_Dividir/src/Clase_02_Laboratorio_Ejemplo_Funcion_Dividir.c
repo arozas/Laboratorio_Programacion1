@@ -12,6 +12,7 @@
 #include <stdlib.h>
 
 float dividir(float dividento, float divisor);
+int sumar(int numA, int numB);
 
 int main(void)
 {
@@ -29,19 +30,28 @@ int main(void)
 float dividir(float dividento, float divisor)
 {
 	float rtn;
-	//rtn=0 puedo declarar el rtn valor 0 y ahorrarme el rtn, pero no puedo
-	//imprimir error.
+	//rtn=0 puedo declarar el rtn valor 0 y ahorrarme el rtn.
 	if(divisor != 0)
 	{
 		rtn=dividento/divisor;
 	}
 	else
 	{
-		puts("ERROR, NO SE PUEDE DIVIDIR POR 0");
-		printf("ERROR, NO SE PUEDE DIVIDIR POR 0");
+		//puts("ERROR, NO SE PUEDE DIVIDIR POR 0");
+		//printf("ERROR, NO SE PUEDE DIVIDIR POR 0");
 		rtn=0;
 	}
+	// tratar de no meter mensajes para no imprimir un mensaje a otra persona que
+	// use la función.
 
 		return rtn;
+}
+int sumar(int numA, int numB)
+{	int rtn;//retorno pero se pone rtn para con confundir con return
+
+	rtn=numA+numB;
+
+	return rtn;
+
 }
 //Las funciones tiene que validar por dentro para no romper.
