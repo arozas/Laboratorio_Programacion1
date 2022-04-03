@@ -36,12 +36,12 @@ float dividirInt (int numero1, int numero2)
 	resultado=(float)numero1/numero2;
 	return resultado;
 }
-float dividirFloat (float numero1, float numero2)
+float dividirFloat (float numero1, float numero2, float* resultado)
 {
-	float resultado;
+	float rtn;
 
-	resultado=(float)numero1/numero2;
+	rtn=(float)numero1/numero2;
 
-	return resultado;
+	return rtn;
 }
 
