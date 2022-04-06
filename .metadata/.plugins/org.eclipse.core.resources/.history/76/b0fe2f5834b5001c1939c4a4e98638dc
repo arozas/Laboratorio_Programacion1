@@ -1,0 +1,41 @@
+/*
+ ============================================================================
+ Name        : Clase_03_Laboratorio.c
+ Author      : Alejandro Alberto Martín Rozas
+ Version     :
+ Copyright   : 24/03/2022
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+
+}
+
+int getInt(char mensaje[], int reintentos, int minimo, int maximo, char mensajeError[], int *pNumeroingresado)
+{
+	int rtn = -1;
+	int auxiliarInt; //buffer
+	int retornoScanf;
+	//Revisar que todos los datos esten bien.
+	if(mensaje != NULL && minimo < maximo && mensajeError != NULL && pNumeroingresado != NULL && reintentos > 0)
+	{
+		printf("%s", mensaje);
+		retornoScanf = scanf("%d", &auxiliarInt);
+		do
+		{
+			if (retornoScanf !=1 || auxiliarInt > maximo || auxiliarInt < minimo)
+			{
+				printf("%s", mensajeError);
+				retornoScanf = scanf("%d", &auxiliarInt);
+				reintentos--;
+			}
+		}
+		while(reintentos>0);
+	}
+	return rtn;
+}

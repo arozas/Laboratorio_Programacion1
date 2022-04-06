@@ -1,0 +1,43 @@
+/*
+ * Operaciones.c
+ *
+ *  Created on: 1 abr. 2022
+ *      Author: Alejandro Alberto Martín Rozas
+ *      Biblioteca de operaciones matématicas
+ *      Versión 0.1 del 01 de abril de 2022
+ */
+#include "BliotecaDeOperaciones.h"
+
+float sumar (float numero1, float numero2)
+{
+	float resultado;
+	resultado=numero1+numero2;
+	return resultado;
+}
+float restar (float numero1, float numero2)
+{
+	float resultado;
+	resultado=numero1-numero2;
+	return resultado;
+}
+float multiplicar (float numero1, float numero2)
+{
+	float resultado;
+	resultado=numero1*numero2;
+	return resultado;
+}
+float dividirInt (int numero1, int numero2)
+{
+	float resultado;
+	resultado=(float)numero1/numero2;
+	return resultado;
+}
+float dividirFloat (float numero1, float numero2, float* resultado)
+{
+	float rtn;
+
+	rtn=(float)numero1/numero2;
+
+	return rtn;
+}
+

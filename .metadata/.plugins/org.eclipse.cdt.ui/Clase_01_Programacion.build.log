@@ -1,0 +1,15 @@
+18:42:09 **** Build of configuration Debug for project Clase_01_Programacion ****
+make all 
+Building file: ../src/Clase_01_Jueves.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Clase_01_Jueves.d" -MT"src/Clase_01_Jueves.o" -o "src/Clase_01_Jueves.o" "../src/Clase_01_Jueves.c"
+Finished building: ../src/Clase_01_Jueves.c
+ 
+Building target: Clase_01_Programacion
+Invoking: Cross GCC Linker
+gcc  -o "Clase_01_Programacion"  ./src/Clase_01_Jueves.o   
+Finished building target: Clase_01_Programacion
+ 
+
+18:42:10 Build Finished. 0 errors, 0 warnings. (took 855ms)
+

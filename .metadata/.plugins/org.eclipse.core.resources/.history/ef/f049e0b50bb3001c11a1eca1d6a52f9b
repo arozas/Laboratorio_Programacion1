@@ -1,0 +1,12 @@
+/*
+ * Validaciones.c
+ *
+ *  Created on: 1 abr. 2022
+ *      Author: Alejandro Alberto Martín Rozas
+ *      Biblioteca de validaciones.
+ *      Versión 0.1 del 01 de abril de 2022
+ */
+
+#include "Validaciones.h"
+
+

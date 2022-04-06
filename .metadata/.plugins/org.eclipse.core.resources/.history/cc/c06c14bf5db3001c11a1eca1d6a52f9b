@@ -1,0 +1,100 @@
+/*
+ ============================================================================
+ Name        : Calculadoras Operaciones Básicas.c
+ Author      : Alejandro Alberto Martín Rozas
+ Version     : 0.1 del 01 de abril de 2022
+ Copyright   :
+ Objetive	 : Tomar numeros ingresados por el usuario
+ 	 	 	   y realizar operaciones matématicas simples.
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdio_ext.h>
+#include "Operaciones.h"
+#include "Entrada.h"
+
+#define TRUE  1
+#define FALSE 0
+
+int main(void)
+{
+	float opcionIngresada;
+	float respuestaIngresada;
+	float numeroIngresadoUno;
+	float numeroIngresadoDos;
+	float resultadoObtenido;
+	int validacionDivision;
+
+	respuestaIngresada=TRUE;
+
+	do
+	{
+		menuUno("CALCULADORA EN C", "OPERACIONES BÁSICAS", "OTRAS OPERACIONES", &opcionIngresada);
+		switch((int)opcionIngresada)
+		{
+		case 1:
+			menuTres("OPERACIONES BÁSICAS", "SUMAR", "RESTAR", "MULTIPLICAR", "DIVIDIR", &opcionIngresada);
+			switch((int)opcionIngresada)
+			{
+			case 1:
+				do
+				{
+					ingresoNumero("INGRESE UN NÚMERO", &numeroIngresadoUno);
+					ingresoNumero("INGRESE OTRO NÚMERO", &numeroIngresadoDos);
+					sumar(numeroIngresadoUno, numeroIngresadoDos, &resultadoObtenido);
+					printf("\n RESULTADO: %2.f", resultadoObtenido);
+					menuUno("¿DESEA CONTINUAR SUMANDO?", "SI", "NO", &respuestaIngresada);
+				}while(respuestaIngresada==TRUE);
+				break;
+			case 2:
+				do
+				{
+					ingresoNumero("INGRESE UN NÚMERO", &numeroIngresadoUno);
+					ingresoNumero("INGRESE OTRO NÚMERO", &numeroIngresadoDos);
+					restar(numeroIngresadoUno, numeroIngresadoDos, &resultadoObtenido);
+					printf("\n RESULTADO: %2.f", resultadoObtenido);
+					menuUno("¿DESEA CONTINUAR RESTANDO?", "SI", "NO", &respuestaIngresada);
+				}while(respuestaIngresada==TRUE);
+				break;
+			case 3:
+				do
+				{
+					ingresoNumero("INGRESE UN NÚMERO", &numeroIngresadoUno);
+					ingresoNumero("INGRESE OTRO NÚMERO", &numeroIngresadoDos);
+					multiplicar(numeroIngresadoUno, numeroIngresadoDos, &resultadoObtenido);
+					printf("\n RESULTADO: %2.f", resultadoObtenido);
+					menuUno("¿DESEA CONTINUAR MULTIPLICANDO?", "SI", "NO", &respuestaIngresada);
+				}while(respuestaIngresada==TRUE);
+				break;
+			default:
+				do
+				{
+					ingresoNumero("INGRESE UN NÚMERO", &numeroIngresadoUno);
+					ingresoNumero("INGRESE OTRO NÚMERO", &numeroIngresadoDos);
+					validacionDivision=dividir(numeroIngresadoUno, numeroIngresadoDos, &resultadoObtenido);
+					if (validacionDivision==TRUE)
+					{
+						printf("\n RESULTADO: %2.f", resultadoObtenido);
+					}
+					else
+					{
+						printf("ERROR, NO SE PUEDE DIVIDIR POR CERO \n");
+					}
+					menuUno("¿DESEA CONTINUAR DIVIDIENDO?", "SI", "NO", &respuestaIngresada);
+				}while(respuestaIngresada==TRUE);
+				break;
+			}
+			break;
+			default:
+				menuUno("OTRAS OPERACIONES", "RESTO", "PRODUCTO", &opcionIngresada);
+				break;
+		}
+		menuUno("¿DESEA CONTINUAR OPERANDO?", "SI", "NO", &respuestaIngresada);
+	}while(respuestaIngresada==TRUE);
+
+
+	printf("\n\t\t\t\nFINALIZO EL PROGRAMA");
+	return 0;
+}

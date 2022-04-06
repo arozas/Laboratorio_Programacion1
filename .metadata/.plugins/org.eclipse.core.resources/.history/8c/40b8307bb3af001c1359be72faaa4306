@@ -1,0 +1,66 @@
+/*
+ ============================================================================
+ Name        : Clase_02.c
+ Author      : Alejandro Alberto Martín Rozas
+ Version     : 29/03/2022
+ Copyright   :
+ Description : Pedir 10 numeros al usuario y mostrar el máximo y el minimo.
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+	short numeroIngresado;
+	short contadorVueltas;
+	short banderaPrimero;
+	short numeroMaximo;
+	short numeroMinimo;
+	short ordenIngresoMaximo;
+	short ordenIngresoMinimo;
+
+	contadorVueltas=0;
+	banderaPrimero=1;
+
+	printf("ESTE PROGRAMA TOMA NÚMEROS Y NOS INFORMA EL MINIMO O MAXIMO INGRESADO \n");
+
+	for(contadorVueltas = 0 ; contadorVueltas < 10 ; contadorVueltas++)
+	{
+		printf("Ingrese un número entero positivo o negativo: \n");
+		scanf("%hi", &numeroIngresado);
+		if(banderaPrimero==1)
+		{
+			numeroMaximo=numeroIngresado;
+			numeroMinimo=numeroIngresado;
+			ordenIngresoMaximo=contadorVueltas+1;
+			ordenIngresoMinimo=contadorVueltas+1;
+			banderaPrimero=0;
+			printf("El primer numero máximo y minimo es: %hi \n", numeroIngresado);
+		}
+		else
+		{
+			if(numeroMaximo<numeroIngresado)
+			{
+				numeroMaximo=numeroIngresado;
+				ordenIngresoMaximo=contadorVueltas;
+				printf("El nuevo maxímo es: %hi \n", numeroMaximo);
+				printf("Se ingresó en el orden: %hi \n", ordenIngresoMaximo);
+			}
+			else
+			{
+				if(numeroMinimo>numeroIngresado)
+				{
+					numeroMinimo=numeroIngresado;
+					ordenIngresoMinimo=contadorVueltas;
+					printf("El nuevo minimo es: %hi \n", numeroMinimo);
+					printf("Se ingresó en el orden: %hi \n", ordenIngresoMinimo);
+				}
+			}
+		}
+
+	}
+	printf("FINALIZÓ EL PROGRAMA");
+	return EXIT_SUCCESS;
+}

@@ -1,0 +1,69 @@
+/*
+ ============================================================================
+ Name        : Calculadoras Operaciones Básicas.c
+ Author      : Alejandro Alberto Martín Rozas
+ Version     : 0.1 del 01 de abril de 2022
+ Copyright   :
+ Objetive	 : Tomar numeros ingresados por el usuario
+ 	 	 	   y realizar operaciones matématicas simples.
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdio_ext.h>
+#include "Operaciones.h"
+#include "Entrada.h"
+
+#define TRUE  1
+#define FALSE 0
+
+void ingresoNumero(char pregunta[40], float* respuesta);
+
+int main(void)
+{
+	/*float numero1=20;
+	float numero2=2;
+	float resultado;
+	int validacion;
+
+	validacion = dividir(numero1, numero2, &resultado);
+	if (validacion==0)
+	{
+		printf("El resultado es: %.2f \n", resultado);
+	}
+	else
+	{
+		printf("no se puede dividir por 0");
+	}
+	 */
+	float opcion;
+	float respuesta;
+
+	respuesta=TRUE;
+
+	do
+	{
+		menuUno("CALCULADORA EN C", "Operaciones básicas", "Otras operaciones", &opcion);
+		switch((int)opcion)
+		{
+		case 1:
+			menuTres("Operaciones básicas", "Sumar", "Restar", "Multiplicar", "Dividir", &opcion);
+			break;
+		default:
+			menuUno("Otras operaciones", "Resto", "Producto", &opcion);
+		}
+		menuUno("¿DESEA CONTINUAR?", "SI", "NO", &respuesta);
+	}while(respuesta==TRUE);
+
+
+		printf("\n\t\t\t\nFINALIZO EL PROGRAMA");
+		return 0;
+}
+void ingresoNumero(char pregunta[40], float* respuesta)
+{
+	printf("%s\n",pregunta);
+	scanf("%f",&(*respuesta));
+}
+
+

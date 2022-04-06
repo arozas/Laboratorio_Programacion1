@@ -1,0 +1,15 @@
+13:40:54 **** Build of configuration Debug for project Clase_02_Laboratorio_Ejemplo_02_Funcion_Dividir ****
+make all 
+Building file: ../src/Clase_02_Laboratorio_Ejemplo_Funcion_Dividir.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Clase_02_Laboratorio_Ejemplo_Funcion_Dividir.d" -MT"src/Clase_02_Laboratorio_Ejemplo_Funcion_Dividir.o" -o "src/Clase_02_Laboratorio_Ejemplo_Funcion_Dividir.o" "../src/Clase_02_Laboratorio_Ejemplo_Funcion_Dividir.c"
+Finished building: ../src/Clase_02_Laboratorio_Ejemplo_Funcion_Dividir.c
+ 
+Building target: Clase_02_Laboratorio_Ejemplo_02_Funcion_Dividir
+Invoking: GCC C Linker
+gcc  -o "Clase_02_Laboratorio_Ejemplo_02_Funcion_Dividir"  ./src/Clase_02_Laboratorio_Ejemplo_Funcion_Dividir.o   
+Finished building target: Clase_02_Laboratorio_Ejemplo_02_Funcion_Dividir
+ 
+
+13:40:54 Build Finished. 0 errors, 0 warnings. (took 764ms)
+

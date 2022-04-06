@@ -1,0 +1,17 @@
+18:49:05 **** Build of configuration Debug for project Clase_01_Programacion_01_Variable_TiposDatos_Especificadores ****
+make all 
+Building file: ../src/Clase_01_Programacion_01_TiposDatos.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Clase_01_Programacion_01_TiposDatos.d" -MT"src/Clase_01_Programacion_01_TiposDatos.o" -o "src/Clase_01_Programacion_01_TiposDatos.o" "../src/Clase_01_Programacion_01_TiposDatos.c"
+../src/Clase_01_Programacion_01_TiposDatos.c: In function ‘main’:
+../src/Clase_01_Programacion_01_TiposDatos.c:117:40: error: expected ‘;’ before ‘}’ token
+  117 |  printf ("hola mundo %d %d %c",1,3,'c')//dentro de las comillas tengo que incluir los especificadores de datos para mostrar.
+      |                                        ^
+      |                                        ;
+  118 | }
+      | ~                                       
+make: *** [src/subdir.mk:20: src/Clase_01_Programacion_01_TiposDatos.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+
+18:49:06 Build Failed. 2 errors, 0 warnings. (took 628ms)
+

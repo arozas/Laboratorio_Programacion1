@@ -1,0 +1,33 @@
+21:21:04 **** Build of configuration Debug for project Clase_03_Laboratorio ****
+make all 
+Building file: ../src/Clase_03_Laboratorio.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Clase_03_Laboratorio.d" -MT"src/Clase_03_Laboratorio.o" -o "src/Clase_03_Laboratorio.o" "../src/Clase_03_Laboratorio.c"
+Finished building: ../src/Clase_03_Laboratorio.c
+ 
+Building file: ../src/Entrada.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Entrada.d" -MT"src/Entrada.o" -o "src/Entrada.o" "../src/Entrada.c"
+Finished building: ../src/Entrada.c
+ 
+Building file: ../src/Operaciones.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Operaciones.d" -MT"src/Operaciones.o" -o "src/Operaciones.o" "../src/Operaciones.c"
+Finished building: ../src/Operaciones.c
+ 
+Building file: ../src/Validaciones.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Validaciones.d" -MT"src/Validaciones.o" -o "src/Validaciones.o" "../src/Validaciones.c"
+Finished building: ../src/Validaciones.c
+ 
+Building target: Clase_03_Laboratorio
+Invoking: GCC C Linker
+gcc  -o "Clase_03_Laboratorio"  ./src/Clase_03_Laboratorio.o ./src/Entrada.o ./src/Operaciones.o ./src/Validaciones.o   
+Finished building target: Clase_03_Laboratorio
+ 
+21:21:10 **** Incremental Build of configuration Debug for project Clase_03_Laboratorio ****
+make all 
+make: No se hace nada para 'all'.
+21:21:23 **** Incremental Build of configuration Debug for project Clase_03_Laboratorio ****
+make all 
+make: No se hace nada para 'all'.

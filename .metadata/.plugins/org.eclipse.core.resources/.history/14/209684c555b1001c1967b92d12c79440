@@ -1,0 +1,12 @@
+/*
+ * BliotecaDeOperaciones.c
+ *
+ *  Created on: 31 mar. 2022
+ *      Author: alejandro
+ *
+ *      Aca solo se desarrollan los prototipos definidos en la bilioteca.h
+ *      y como include solo la llamada a su respectiva biblioteca .h
+ */
+#include "BliotecaDeOperaciones.h"
+
+

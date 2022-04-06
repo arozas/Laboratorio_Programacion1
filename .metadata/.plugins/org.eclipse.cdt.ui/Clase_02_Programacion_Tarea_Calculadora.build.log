@@ -1,0 +1,6 @@
+12:54:27 **** Incremental Build of configuration Debug for project Clase_02_Programacion_Tarea_Calculadora ****
+make all 
+make: No se hace nada para 'all'.
+
+12:54:27 Build Finished. 0 errors, 0 warnings. (took 572ms)
+
