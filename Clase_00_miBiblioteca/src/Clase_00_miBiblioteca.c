@@ -10,8 +10,16 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "Input.h"
 
 int main(void) {
-	puts("Hola Mundo"); /* prints Hola Mundo */
+	puts("PRUEBAS DE FUNCIONES");
+
+	int aNumeroIngresado[5];
+
+	input_getNumber("INGRESE UN NUMERO", 2, 1, 200, "INGRESO MAL EL NUMERO", &aNumeroIngresado[1]);
+
+	printf("Numero Ingresado: %d", aNumeroIngresado[1]);
+
 	return EXIT_SUCCESS;
 }

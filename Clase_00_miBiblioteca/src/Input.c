@@ -7,8 +7,72 @@
  *      Versión 0.4 del 14 de abril de 2022
  */
 #include "Input.h"
+#include <string.h>
+
+static int myGets(char aUserInputs[], int lenght);
+static int getInt(int *pAuxNumber);
+static int itsNumerical(char aPossibleNumbers[]);
 
 
+static int myGets(char aUserInputs[], int lenght)
+{
+	/// @brief Get the user inputs from the stdin buffer.
+	///
+	/// @param aUserInputs
+	/// @param lenght
+	/// @return
+
+	int rtn=-1;
+	char auxArray[1020];
+	if(aUserInputs!=NULL && lenght > 0 && fgets(auxArray, sizeof(auxArray), stdin) == auxArray )
+	{
+		strncpy(aUserInputs,auxArray,lenght);
+		rtn=0;
+	}
+	return rtn;
+
+}
+
+static int getInt(int *pAuxNumber)
+{
+	/// @brief
+	///
+	/// @param pAuxNumber
+	/// @return
+	int rtn = -1;
+	char auxNumber[12];
+
+	if(myGets(pAuxNumber , sizeof(auxNumber))==0 && itsNumerical(pAuxNumber)==0)
+	{
+		*pAuxNumber=atoi(auxNumber);
+		rtn=0;
+	}
+	return rtn;
+}
+
+static int itsNumerical(char aPossibleNumbers[])
+{
+
+	int rtn=0;
+	int i=0;
+	if(aPossibleNumbers!=NULL && strlen(aPossibleNumbers)>0)
+	{
+		while(aPossibleNumbers[i] != '\0')
+		{
+			if(aPossibleNumbers[i] < '0' || aPossibleNumbers[i] > '9' )
+			{
+				rtn = -1;
+				break;
+			}
+			i++;
+		}
+	}
+	else
+	{
+		rtn = -1;
+	}
+	return rtn;
+}
 /// @fn int input_getNumber(char[], int, int, int, char[], int*)
 /// @brief 					Esta función solicita al usuario el ingreso de un entero validando el ingreso,
 /// 						si no se encuentra entre los parametros vuelve a pedir el ingreso.
@@ -19,28 +83,28 @@
 /// @param mensajeError		Es el mensaje de error que muestra la función si no pasó la validación el ingreso por el usuario.
 /// @param pNumeroingresado	Es el puntero donde se guarda el valor ingresado por el usuario.
 /// @return					El retorno devolvera -1 por si hay un error, 0 en el caso que la función no haya tenido errores.
-int input_getNumber(char mensaje[], int reintentos, int minimo, int maximo, char mensajeError[], int *pNumeroingresado)
+int input_getNumber(char mensaje[], int reintentos, int minimo, int maximo, char mensajeError[], int aNumeroingresado[])
 {
 	int rtn = -1;
 	int auxiliarInt; //buffer
-	int retornoScanf;
+	int retornoGetInt;
 	//Revisar que todos los datos esten bien.
-	if(mensaje != NULL && minimo < maximo && mensajeError != NULL && pNumeroingresado != NULL && reintentos >= 0)
+	if(mensaje != NULL && minimo < maximo && mensajeError != NULL && aNumeroingresado != NULL && reintentos >= 0)
 	{
 		printf("\n%s", mensaje);
-		retornoScanf = scanf("%d", &auxiliarInt); //Esto es lo que hay que cambiar.
+		retornoGetInt = getInt(&auxiliarInt);
 		do
 		{
-			if (retornoScanf !=1 || auxiliarInt > maximo || auxiliarInt < minimo)
+			if (retornoGetInt !=-1 || auxiliarInt > maximo || auxiliarInt < minimo)
 			{
 				printf("\n%s", mensajeError);
-				retornoScanf = scanf("%d", &auxiliarInt);
+				retornoGetInt = getInt(&auxiliarInt);
 				reintentos--;
 			}
 			else
 			{
 				reintentos = 0;
-				*pNumeroingresado = auxiliarInt;
+				*aNumeroingresado = auxiliarInt;
 				rtn = 0;
 			}
 		}
@@ -60,7 +124,7 @@ int input_getNumber(char mensaje[], int reintentos, int minimo, int maximo, char
 /// @return					El retorno devolvera 0 por si hay un error, 1 en el caso que la función no haya tenido errores.
 int input_getFloat(char mensaje[], int reintentos, int minimo, int maximo, char mensajeError[], float *pNumeroingresado)
 {
-	int rtn = 0;
+	int rtn = -1;
 	float auxiliarFloat; //buffer
 	int retornoScanf;
 	//Revisar que todos los datos esten bien.
@@ -80,7 +144,7 @@ int input_getFloat(char mensaje[], int reintentos, int minimo, int maximo, char 
 			{
 				reintentos = 0;
 				*pNumeroingresado = auxiliarFloat;
-				rtn = 1;
+				rtn = 0;
 			}
 		}
 		while(reintentos>0);
@@ -99,7 +163,7 @@ int input_getFloat(char mensaje[], int reintentos, int minimo, int maximo, char 
 /// @return						El retorno devolvera 0 por si hay un error, 1 en el caso que la función no haya tenido errores.
 int input_getChar(char mensaje[], int reintentos, char minimo, char maximo, char mensajeError[], char *pCaracteringresado)
 {
-	int rtn = 0;
+	int rtn = -1;
 	char auxiliarChar; //buffer
 	int retornoScanf;
 	//Revisar que todos los datos esten bien.
@@ -120,7 +184,7 @@ int input_getChar(char mensaje[], int reintentos, char minimo, char maximo, char
 			{
 				reintentos = 0;
 				*pCaracteringresado = auxiliarChar;
-				rtn = 1;
+				rtn = 0;
 			}
 		}
 		while(reintentos>0);
@@ -142,7 +206,7 @@ int input_menuTwoOp(char nombreMenu[], char opcion1[], char opcion2[])
 	printf("\n\t\t\t%s\n",nombreMenu);
 	printf("1. %s\n",opcion1);
 	printf("2. %s\n",opcion2);
-	if(input_getInt("INTRODUZCA OPCIÓN <1-2>:", 3, 1, 2, "ERROR INTRODUZCA OPCIÓN <1-2>", &opcionIngresada) == 1)
+	if(input_getNumber("INTRODUZCA OPCIÓN <1-2>:", 3, 1, 2, "ERROR INTRODUZCA OPCIÓN <1-2>", &opcionIngresada) == 1)
 	{
 		printf("\nOPCIÓN INGRESADA:%d\n",opcionIngresada);
 	}
@@ -170,7 +234,7 @@ int input_menuThreeOp(char nombreMenu[], char opcion1[], char opcion2[], char op
 	printf("1. %s\n",opcion1);
 	printf("2. %s\n",opcion2);
 	printf("3. %s\n",opcion3);
-	if(input_getInt("INTRODUZCA OPCIÓN <1-3>:", 3, 1, 3, "ERROR INTRODUZCA OPCIÓN <1-3>", &opcionIngresada) == 1)
+	if(input_getNumber("INTRODUZCA OPCIÓN <1-3>:", 3, 1, 3, "ERROR INTRODUZCA OPCIÓN <1-3>", &opcionIngresada) == 1)
 	{
 		printf("\nOPCIÓN INGRESADA:%d\n",opcionIngresada);
 	}
@@ -200,7 +264,7 @@ int input_menuFourOp(char nombreMenu[], char opcion1[], char opcion2[], char opc
 	printf("2. %s\n",opcion2);
 	printf("3. %s\n",opcion3);
 	printf("4. %s\n",opcion4);
-	if(input_getInt("INTRODUZCA OPCIÓN <1-4>:", 3, 1, 4, "ERROR INTRODUZCA OPCIÓN <1-4>", &opcionIngresada) == 1)
+	if(input_getNumber("INTRODUZCA OPCIÓN <1-4>:", 3, 1, 4, "ERROR INTRODUZCA OPCIÓN <1-4>", &opcionIngresada) == 1)
 	{
 		printf("\nOPCIÓN INGRESADA:%d\n",opcionIngresada);
 	}
@@ -232,7 +296,7 @@ int input_menuFiveOp(char nombreMenu[], char opcion1[], char opcion2[], char opc
 	printf("3. %s\n",opcion3);
 	printf("4. %s\n",opcion4);
 	printf("5. %s\n",opcion5);
-	if(input_getInt("INTRODUZCA OPCIÓN <1-5>:", 3, 1, 5, "ERROR INTRODUZCA OPCIÓN <1-5>", &opcionIngresada) == 1)
+	if(input_getNumber("INTRODUZCA OPCIÓN <1-5>:", 3, 1, 5, "ERROR INTRODUZCA OPCIÓN <1-5>", &opcionIngresada) == 1)
 	{
 		printf("\nOPCIÓN INGRESADA:%d\n",opcionIngresada);
 	}
@@ -266,7 +330,7 @@ int input_menuSixOp(char nombreMenu[], char opcion1[], char opcion2[], char opci
 	printf("4. %s\n",opcion4);
 	printf("5. %s\n",opcion5);
 	printf("6. %s\n",opcion6);
-	if(input_getInt("INTRODUZCA OPCIÓN <1-6>:", 3, 1, 6, "ERROR INTRODUZCA OPCIÓN <1-6>", &opcionIngresada) == 1)
+	if(input_getNumber("INTRODUZCA OPCIÓN <1-6>:", 3, 1, 6, "ERROR INTRODUZCA OPCIÓN <1-6>", &opcionIngresada) == 1)
 	{
 		printf("\nOPCIÓN INGRESADA:%d\n",opcionIngresada);
 	}

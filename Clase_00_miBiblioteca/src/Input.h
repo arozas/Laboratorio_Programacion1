@@ -13,7 +13,7 @@
 #include <stdlib.h>
 #include <stdio_ext.h>
 
-int input_getInt(char mensaje[], int reintentos, int minimo, int maximo, char mensajeError[], int *pNumeroingresado);
+int input_getNumber(char mensaje[], int reintentos, int minimo, int maximo, char mensajeError[], int *pNumeroingresado);
 int input_getFloat(char mensaje[], int reintentos, int minimo, int maximo, char mensajeError[], float *pNumeroingresado);
 int input_getChar(char mensaje[], int reintentos, char minimo, char maximo, char mensajeError[], char *pCaracteringresado);
 int input_menuTwoOp(char nombreMenu[], char opcion1[], char opcion2[]);
