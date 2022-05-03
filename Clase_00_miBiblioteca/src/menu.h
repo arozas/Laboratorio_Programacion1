@@ -7,12 +7,13 @@
  *      Versión 0.1 del 01 de abril de 2022
  */
 
-#ifndef VALIDACIONES_H_
-#define VALIDACIONES_H_
+#ifndef MENU_H_
+#define MENU_H_
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdio_ext.h>
 
-void validarOpcionNum(int numeroValidar, int numero1, int numero2, short* opcionIngresada);
+int menu_menu(char menuTitle[], char menuText[], char errorMessages[],int retries, int numberOptions);
+int menu_confirm(char message[], char errorMessage[]);
 
-#endif /* VALIDACIONES_H_ */
+#endif /* MENU_H_ */

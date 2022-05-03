@@ -6,7 +6,7 @@
  *      Biblioteca de operaciones matématicas
  *      Versión 0.5 del 14 de abril de 2022
  */
-#include "Operations.h"
+#include "operations.h"
 
 /// @fn int operations_Add(float, float, float*)
 /// @brief 						Esta función suma 2 números.

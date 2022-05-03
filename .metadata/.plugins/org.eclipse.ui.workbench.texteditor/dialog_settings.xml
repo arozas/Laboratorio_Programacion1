@@ -6,18 +6,41 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value=""/>
+		<item key="selection" value="EMPTY"/>
 		<list key="findhistory">
+			<item value="LIBRE"/>
+			<item value="EMPTY"/>
+			<item value="BAJA"/>
+			<item value="OCUPADO"/>
+			<item value="eProducto"/>
+			<item value="lenght"/>
+			<item value="aPossibleLetter"/>
+			<item value="aPossibleFloat"/>
+			<item value="aPossibleInteger"/>
+			<item value="itsNumerical"/>
+			<item value="aPossibleNumbers"/>
+			<item value="static int itsNumerical(char aPossibleNumbers[])"/>
 			<item value="respuestaIngresada"/>
 			<item value="int"/>
 			<item value="sumar"/>
 		</list>
 		<list key="replacehistory">
+			<item value="EMPTY"/>
+			<item value="DOWN"/>
+			<item value="LOADED"/>
+			<item value="eGen"/>
+			<item value="length"/>
+			<item value="aPossibleAlpha"/>
+			<item value="aPossibleLetter"/>
+			<item value="aPossibleFloat"/>
+			<item value="itsInteger"/>
+			<item value="ItsInteger"/>
+			<item value="aPossibleInteger"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="477"/>
-		<item key="DIALOG_Y_ORIGIN" value="75"/>
+		<item key="DIALOG_X_ORIGIN" value="20"/>
+		<item key="DIALOG_Y_ORIGIN" value="20"/>
 		<item key="DIALOG_WIDTH" value="363"/>
 		<item key="DIALOG_HEIGHT" value="437"/>
 		<item key="DIALOG_FONT_NAME" value="1|Ubuntu|11.0|0|GTK|1|"/>

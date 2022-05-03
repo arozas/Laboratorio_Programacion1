@@ -9,7 +9,7 @@
 
 #ifndef OPERATIONS_H_
 #define OPERATIONS_H_
-#include "Input.h"
+#include "input.h"
 
 int operations_Add(float numero1, float numero2, float* pResultadoOperacion);
 int operations_Subtract (float numero1, float numero2, float* pResultadoOperacion);
